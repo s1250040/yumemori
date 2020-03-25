@@ -2,6 +2,10 @@
 <template>
   <v-container fluid>
     <v-sparkline
+      :height="50"
+      :width="300"
+      
+      :label-size="4"
       :fill="fill"
       :gradient="gradient"
       :line-width="width"
@@ -10,16 +14,20 @@
       :value="value"
       auto-draw
     ></v-sparkline>
-
+    <v-row>
+    <v-col cols="4" md="4">|<div></div>21:31</v-col>
+    <v-col cols="4" md="4">|</v-col>
+    <v-col cols="4" md="4">|</v-col>
+    </v-row>
     <v-divider></v-divider>
 
     <v-row>
-      <v-col
-        cols="12"
-        md="6"
-      >
-      2018/12/12   21:32 ~ 05:37
-      </v-col>
+      <v-col cols="12" md="12">睡眠品質指数(SQI)</v-col>
+      <v-col cols="12" md="4">睡眠時間(TSL)：467.5 min</v-col>
+      <v-col cols="12" md="4">眠るまでの時間(SL)：12.0 min</v-col>
+      <v-col cols="12" md="4">中途覚醒(WASO)：5.0 min</v-col>
+      <v-col cols="12" md="4">睡眠効率(SE)：98.9 %</v-col>
+      <v-col cols="12" md="4">深い睡眠の割合(RDS)：54.4 %</v-col>
     </v-row>
   </v-container>
   </template>
@@ -31,43 +39,19 @@
     ['#1feaea', '#ffd200', ,'#f72047'],
   ]
 
-  // export default {
-  //   data: () => ({
-  //     fill: false,
-  //     gradient: gradients[0],
-  //     gradients,
-  //     padding: 3,
-  //     radius: 0.1,
-  //     value: [0, 0, 1, 2, 2, 2, 
-  //             1, 1, 2, 0, 0, 3, 
-  //             3, 3, 4, 4, 4, 4,
-  //             4, 4, 4, 4, 4, 4,
-  //             4, 4, 4, 4, 4, 4,
-  //             4, 4, 4, 4, 4, 4,
-  //             4, 4, 4, 4, 4, 4,
-  //             3, 3, 3, 2, 2, 2,],
-  //     width: 2,
-  //   }),
-  // }
-
   export default {
     data: () => ({
+      // labels: [
+      //   '12am',
+      // ],
       fill: false,
       gradient: gradients[0],
       gradients,
       padding: 3,
       radius: 0.1,
       value: [
-        1,1,2
-,2
-,2
-,2
-,2
-,2
-,2
-,2
-,2
-,2
+        1,1,2,2,2
+       ,2,2,2,2,2,2
 ,2
 ,1
 ,1

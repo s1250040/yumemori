@@ -2,14 +2,6 @@
   <v-layout>
     <v-flex class="text-center">
       <v-card hover="ture" to="/chart">
-
-       <v-img
-      class="white--text align-end"
-      height="200px"
-      src="~/assets/images/tanu.jpg"
-    >
-    </v-img>
-
           <v-card-title>
               201 森一樹さん
           </v-card-title>

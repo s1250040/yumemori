@@ -1,45 +1,62 @@
 <template >
   <v-layout>
     <v-flex class="text-center">
-      <v-card hover="ture" to="/chart" color="red" max-width="350">
+      <v-card hover="ture" to="/previousday" color="yellow" max-width="350">
        
           <v-card-title>
-              101 千葉照子さん 100BPM/36.5
+              101 千葉照子さん 
           </v-card-title>
+          <v-card-subtitle>
+             離席時間60分
+          </v-card-subtitle>
           <v-card-actions>
-          <!-- <v-spacer /> -->
+          <v-card-text>
+            100BPM：36.5
+          </v-card-text>
           <v-btn
             color="primary"
-            to="/details"
+            to="/preparation"
           >
-            詳細情報
+            詳細
           </v-btn>
         </v-card-actions>
 
       </v-card>
-      <v-card hover="ture" to="/inspire" color="#64FFDA" max-width="350">
+      <v-card hover="ture" to="/preparation" color="#64FFDA" max-width="350">
           <v-card-title>
-              102 山内智恵子さん 110BPM/36.0
+              102 山内智恵子さん 
           </v-card-title>
+          <v-card-subtitle>
+             離席時間0分
+          </v-card-subtitle>
           <v-card-actions>
+          <v-card-text>
+            105BPM：36.0
+          </v-card-text>
           <v-btn
             color="primary"
-            to="/inspire"
+            to="/preparation"
           >
-            詳細情報
+            詳細
           </v-btn>
         </v-card-actions>
       </v-card>
-      <v-card hover="ture" to="/inspire" color="yellow" max-width="350">
+      <v-card hover="ture" to="/preparation" color="yellow" max-width="350">
           <v-card-title>
-              103 宮内考子さん 90BPM/36.2
+              103 宮内考子さん
           </v-card-title>
+          <v-card-subtitle>
+             離席時間25分
+          </v-card-subtitle>
           <v-card-actions>
+          <v-card-text>
+            90BPM：36.2
+          </v-card-text>
           <v-btn
             color="primary"
-            to="/inspire"
+            to="/preparation"
           >
-            詳細情報
+            詳細
           </v-btn>
         </v-card-actions>
       </v-card>

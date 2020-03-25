@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mx-auto"
-    color="grey lighten-4"
+    color="white"
     max-width="600"
   >
     <v-card-title>
@@ -27,14 +27,12 @@
       </v-row>
 
       <v-spacer></v-spacer>
-
-      <!-- <v-btn icon class="align-self-start" size="28">
-        <v-icon>mdi-arrow-right-thick</v-icon>
-      </v-btn> -->
+      
     </v-card-title>
 
     <v-sheet color="transparent">
       <v-sparkline
+        :labels="labels"
         :key="String(avg)"
         :smooth="16"
         :gradient="['#f72047', '#ffd200', '#1feaea']"
@@ -45,9 +43,16 @@
       ></v-sparkline>
     </v-sheet>
   </v-card>
+
+
+
+
+
 </template>
 
 <script>
+
+
   const exhale = ms =>
     new Promise(resolve => setTimeout(resolve, ms))
 
