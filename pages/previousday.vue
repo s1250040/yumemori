@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import sleepstagechart from './sleepstage-chart';
-import doughnutchart from './doughnut-chart';
+import sleepstagechart from '../components/sleepstage-chart';
+import doughnutchart from '../components/doughnut-chart';
 import heartratechart from './heartrate-chart';
 
 export default {
