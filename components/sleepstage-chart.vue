@@ -15,14 +15,14 @@
       auto-draw
     ></v-sparkline>
     <v-row>
-    <v-col cols="4" md="4">|<div></div>21:31</v-col>
+    <v-col cols="4" md="4">|<div></div>21:31~05:37</v-col>
     <v-col cols="4" md="4">|</v-col>
     <v-col cols="4" md="4">|</v-col>
     </v-row>
     <v-divider></v-divider>
 
     <v-row>
-      <v-col cols="12" md="12">睡眠品質指数(SQI)</v-col>
+      <v-col cols="12" md="12">睡眠変数</v-col>
       <v-col cols="12" md="4">睡眠時間(TSL)：467.5 min</v-col>
       <v-col cols="12" md="4">眠るまでの時間(SL)：12.0 min</v-col>
       <v-col cols="12" md="4">中途覚醒(WASO)：5.0 min</v-col>

@@ -17,6 +17,8 @@
     "vue-chartjs": "^3.5.0"
   },
   "devDependencies": {
+    "@mdi/font": "^5.0.45",
+    "@mdi/js": "^5.0.45",
     "@nuxtjs/vuetify": "^1.0.0"
   }
 }

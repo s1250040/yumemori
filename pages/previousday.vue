@@ -16,7 +16,7 @@
         昨日の睡眠
     </v-card-title>
     <v-card-text>
-        2018/12/12 21:31~05:37
+        2018/12/12 
     </v-card-text>
 <sleepstagechart/>
 </v-card>
