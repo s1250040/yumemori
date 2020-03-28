@@ -10,7 +10,7 @@
       :cols=3
     >
     
-    <v-card hover="ture" :color="user.state" :to="user.chart" class="text-center" nuxt="ture">
+    <v-card hover=ture :color="user.state" :to="user.chart" class="text-center" nuxt=ture>
     <v-row dence>
       <v-col cols=12 ><v-card-title v-text="user.name" ></v-card-title></v-col>
       <v-col cols=6>

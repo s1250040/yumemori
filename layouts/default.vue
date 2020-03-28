@@ -54,7 +54,7 @@
           v-for="(memu, index) in memus"
           :key="index"
           :to="memu.to"
-          nuxt="ture"
+          nuxt=ture
         >
           <v-list-item-title>{{ memu.title }}</v-list-item-title>
         </v-list-item>
@@ -83,12 +83,12 @@ export default {
         {
           icon: 'mdi-stairs-box',
           title: '1F',
-          to: '/first-floor'
+          to: '/firstfloor'
         },
         {
           icon: 'mdi-stairs-box',
           title: '2F',
-          to: '/second-floor'
+          to: '/secondfloor'
         }
       ],
       memus: [

@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex class="text-center">
-      <v-card hover="ture" to="/chart">
+      <v-card hover=ture to="/chart">
           <v-card-title>
               201 森一樹さん
           </v-card-title>
