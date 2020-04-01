@@ -40,6 +40,9 @@
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn> -->
       <v-toolbar-title v-text="title" />
+
+      <v-btn icon to="/preparation" class="pa-6"><v-icon >mdi-calendar-month</v-icon></v-btn>
+
       <v-spacer></v-spacer>
       
 
@@ -80,6 +83,11 @@ export default {
       drawer: false,
       fixed: false,
       items: [
+        {
+          icon: 'mdi-apps',
+          title: '離床時間超過者',
+          to: '/takeoff'
+        },
         {
           icon: 'mdi-stairs-box',
           title: '1F',

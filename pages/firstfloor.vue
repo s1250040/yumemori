@@ -7,25 +7,27 @@
     <v-col
       v-for="user in users"
       :key="user.id"
-      :cols=3
+      :cols=4
     >
     
     <v-card hover=ture :color="user.state" :to="user.chart" class="text-center" nuxt=ture>
     <v-row dence>
       <v-col cols=12 ><v-card-title v-text="user.name" ></v-card-title></v-col>
+      <!-- <v-col cols=6 ><v-card-actions><v-btn icon to="/preparation" class="pa-6"><v-icon >mdi-calendar-month</v-icon></v-btn></v-card-actions></v-col> -->
+      
+      <v-col cols=6><v-icon x-large class="pa-1">{{user.icon}}</v-icon></v-col>
       <v-col cols=6>
       <v-card-text v-text="user.leaving">
       </v-card-text>
       </v-col>
-      <v-col cols=6><v-icon x-large class="pa-1">{{user.icon}}</v-icon></v-col>
-      <v-col cols=6>
+      <!-- <v-col cols=6>
       <v-card-text v-text="user.bpm">
       </v-card-text>
-      </v-col>
-      <v-col cols=6>
+      </v-col> -->
+      <!-- <v-col cols=6>
       <v-card-text v-text="user.bodytempreture">
       </v-card-text>
-      </v-col>
+      </v-col> -->
       </v-row>
     </v-card>
     
@@ -110,9 +112,9 @@ export default {
         {
           id: '1',
           name: '101千葉照子',
-          leaving: "離床時間："+'60'+"分",
-          bpm: "心拍数："+'100'+"bpm",
-          bodytempreture: "体温："+'36.2'+"度",
+          leaving: "離床時間"+'60'+"分",
+          bpm: "心拍数"+'100'+"bpm",
+          bodytempreture: "体温"+'36.2'+"度",
           chart: '/previousday',
           state: 'yellow',
           icon: 'mdi-airplane-takeoff'
@@ -120,9 +122,9 @@ export default {
         {
           id: '2',
           name: '102山内智恵子',
-          leaving: "離床時間："+'0'+"分",
-          bpm: "心拍数："+'105'+"bpm",
-          bodytempreture: "体温："+'36.6'+"度",
+          leaving: "離床時間"+'0'+"分",
+          bpm: "心拍数"+'105'+"bpm",
+          bodytempreture: "体温"+'36.6'+"度",
           chart: '/yamauchi',
           state: '#64FFDA',
           icon: 'mdi-bed' 
@@ -130,9 +132,9 @@ export default {
         {
           id: '3',
           name: '103宮内考子',
-          leaving: "離床時間："+'3'+"分",
-          bpm: "心拍数："+'99'+"bpm",
-          bodytempreture: "体温："+'36.8'+"度",
+          leaving: "離床時間"+'3'+"分",
+          bpm: "心拍数"+'99'+"bpm",
+          bodytempreture: "体温"+'36.8'+"度",
           chart: '/miyauchi',
           state: '#64FFDA',
           icon: 'mdi-airplane-takeoff'

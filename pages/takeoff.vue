@@ -26,8 +26,6 @@
       </v-col> -->
       </v-row>
     </v-card>
-    
-
     </v-col>
   </v-row>
   </v-container>
@@ -37,10 +35,17 @@
 export default {
   data (){
     return {
-      // svgPath: mdiBed,
-      // svgPath2: mdiAirplaneTakeoff,
-      // message: "",
       users: [
+        {
+          id: '1',
+          name: '101千葉照子',
+          leaving: "離床時間"+'60'+"分",
+          bpm: "心拍数"+'100'+"bpm",
+          bodytempreture: "体温"+'36.2'+"度",
+          chart: '/previousday',
+          state: 'yellow',
+          icon: 'mdi-airplane-takeoff'
+        },
         {
           id: '4',
           name: '201森一樹',
