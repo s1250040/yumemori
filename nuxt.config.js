@@ -5,6 +5,9 @@ export default {
   /*
   ** Headers of the page
   */
+  /*route */
+ 
+
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -30,9 +33,14 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/firebase.js',
     {
       src: '@/plugins/vue-chartjs',
-      ssr: false,
+      ssr: false
+    },
+    {
+      src: "~plugins/persistedstate.js",
+      ssr: false
     },
   ],
   /*
@@ -45,6 +53,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/dotenv'
   ],
   /*
   ** vuetify module configuration

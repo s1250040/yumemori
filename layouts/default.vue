@@ -38,29 +38,31 @@
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
       </v-btn> -->
-      <!-- <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn> -->
-
       <v-toolbar-title v-text="title" />
 
-      <!-- <v-spacer /> -->
-      <!-- <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn> -->
+      <v-btn icon to="/preparation" class="pa-6"><v-icon >mdi-calendar-month</v-icon></v-btn>
+
+      <v-spacer></v-spacer>
+      
+
+       <v-menu offset-y>
+      <template v-slot:activator="{ on }">
+        <v-btn icon v-on="on">
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="(memu, index) in memus"
+          :key="index"
+          :to="memu.to"
+          nuxt=ture
+        >
+          <v-list-item-title>{{ memu.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
     </v-app-bar>
 
 
@@ -70,32 +72,6 @@
         <nuxt />
       </v-container>
     </v-content>
-
-    <!-- <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-<!-- 
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; 2019</span>
-    </v-footer> -->
-
   </v-app>
 </template>
 
@@ -109,14 +85,26 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: '1F',
-          to: '/first-floor'
+          title: '離床時間超過者',
+          to: '/takeoff'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-stairs-box',
+          title: '1F',
+          to: '/firstfloor'
+        },
+        {
+          icon: 'mdi-stairs-box',
           title: '2F',
-          to: '/second-floor'
+          to: '/secondfloor'
         }
+      ],
+      memus: [
+          {
+            icon: '',
+            title: 'ログアウト',
+            to: '/'
+          }
       ],
       miniVariant: false,
       right: true,

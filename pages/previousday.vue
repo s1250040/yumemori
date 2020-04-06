@@ -13,12 +13,17 @@
 <v-col cols="9">
 <v-card>
     <v-card-title>
-        昨日の睡眠
+        睡眠グラフ
     </v-card-title>
     <v-card-text>
-        2018/12/12 21:31~05:37
+        2018/12/12 
     </v-card-text>
 <sleepstagechart/>
+</v-card>
+</v-col>
+<v-col cols="6">
+<v-card height>
+<bodychart/>
 </v-card>
 </v-col>
 <v-col cols="6">
@@ -30,15 +35,17 @@
 </template>
 
 <script>
-import sleepstagechart from './sleepstage-chart';
-import doughnutchart from './doughnut-chart';
+import sleepstagechart from '../components/sleepstage-chart';
+import doughnutchart from '../components/doughnut-chart';
 import heartratechart from './heartrate-chart';
+import bodychart from './bodytempleturechart';
 
 export default {
     components: {
         sleepstagechart,
         doughnutchart,
         heartratechart,
+        bodychart,
     },
 }
 </script>
