@@ -38,7 +38,7 @@ export default {
       users: [
         {
           id: '1',
-          name: '101千葉照子',
+          name: '101会津太郎',
           leaving: "離床時間"+'60'+"分",
           bpm: "心拍数"+'100'+"bpm",
           bodytempreture: "体温"+'36.2'+"度",

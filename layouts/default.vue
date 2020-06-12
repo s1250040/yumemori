@@ -86,7 +86,7 @@ export default {
         {
           icon: 'mdi-apps',
           title: '離床時間超過者',
-          to: '/takeoff'
+          to: '/test'
         },
         {
           icon: 'mdi-stairs-box',
