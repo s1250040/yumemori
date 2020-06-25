@@ -1,63 +1,93 @@
-<template >
-<v-container fluid>
-  <v-row dence>
-    <v-col
-      v-for="user in users"
-      :key="user.id"
-      :cols=4
-    >
-    
-    <v-card hover=ture :color="user.state" :to="user.chart" class="text-center" nuxt=ture>
-    <v-row dence>
-      <v-col cols=12 ><v-card-title v-text="user.name" ></v-card-title></v-col>
-      <v-col cols=6><v-icon x-large class="pa-1">{{user.icon}}</v-icon></v-col>
-      <v-col cols=6>
-      <v-card-text v-text="user.leaving">
-      </v-card-text>
-      </v-col>
-      
-      <!-- <v-col cols=6>
-      <v-card-text v-text="user.bpm">
-      </v-card-text>
-      </v-col>
-      <v-col cols=6>
-      <v-card-text v-text="user.bodytempreture">
-      </v-card-text>
-      </v-col> -->
-      </v-row>
-    </v-card>
-    </v-col>
-  </v-row>
-  </v-container>
+<template>
+  <section class="container">
+    <div>      
+      <v-app id="inspire">
+        <v-data-table
+          :headers="headers"
+          :items="lists"
+          :items-per-page="10"
+          class="elevation-1"
+        >
+          <template v-slot:item.title="{ item }">
+            <p class="font-weight-medium">{{ item.name }}</p>
+          </template>
+          <template v-slot:item.id="{ item }">
+            <nuxt-link :to="`/users/${item.id}`">
+              <v-chip :color="getColor(item.state)" dark></v-chip>
+            </nuxt-link>
+          </template>
+          <template v-slot:item.completed="{ item }">
+           {{ getFlg(item.completed) }}
+          </template>
+        </v-data-table>
+      </v-app>
+    </div>
+  </section>
 </template>
-
+ 
 <script>
 export default {
-  data (){
+  data () {
     return {
-      users: [
+      headers: [
         {
-          id: '1',
-          name: '101会津太郎',
-          leaving: "離床時間"+'60'+"分",
-          bpm: "心拍数"+'100'+"bpm",
-          bodytempreture: "体温"+'36.2'+"度",
-          chart: '/previousday',
-          state: 'yellow',
-          icon: 'mdi-airplane-takeoff'
+          text: '名前',
+          align: 'left',
+          sortable: false,
+          value: 'title',
         },
-        {
-          id: '4',
-          name: '201森一樹',
-          leaving: "離床時間"+'60'+"分",
-          bpm: "心拍数"+'110'+"bpm",
-          bodytempreture: "体温"+'36.9'+"度",
-          chart: '',
-          state: 'yellow',
-          icon: 'mdi-airplane-takeoff'
-        },
-      ]
+        { text: 'state', value: 'id' },
+        { text: 'メッセージ', value: 'completed' },
+      ],
     }
   },
+  methods: {
+    getColor (state) {
+      if (state == 0) return 'yellow'
+      return '#64FFDA'
+    },
+    getFlg (flg) {      
+      if (flg) return '完了'
+      else return '未完了'
+    },
+  },
+  async asyncData({ app }) {
+    // const baseUrl = 'https://jsonplaceholder.typicode.com/todos/';
+    const baseUrl = 'http://localhost:8080/users';
+    const response = await app.$axios.$get(baseUrl);
+    return { lists: response };
+  }
 }
 </script>
+ 
+<style>
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+ 
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+ 
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+ 
+.links {
+  padding-top: 15px;
+}
+</style>
+ 

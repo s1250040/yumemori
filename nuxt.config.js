@@ -42,6 +42,10 @@ export default {
       src: "~plugins/persistedstate.js",
       ssr: false
     },
+    // {
+    //   src: '~/plugins/vue-full-calendar',
+    //   ssr: false
+    // },
   ],
   /*
   ** Nuxt.js dev-modules
