@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     eventClick: function(info) {
-     window.location.href = "./previousday";
+     window.location.href = "../pages/previousday";
   }
   }
 };

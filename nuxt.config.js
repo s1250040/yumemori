@@ -43,9 +43,9 @@ export default {
       ssr: false
     },
     // {
-    //   src: '~/plugins/vue-full-calendar',
+    //   src: "~plugins/vue-full-calendar",
     //   ssr: false
-    // },
+    // }
   ],
   /*
   ** Nuxt.js dev-modules
