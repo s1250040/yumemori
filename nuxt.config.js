@@ -57,7 +57,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/axios'
   ],
   /*
   ** vuetify module configuration

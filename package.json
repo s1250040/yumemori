@@ -17,6 +17,7 @@
     "@fullcalendar/timegrid": "^4.4.0",
     "@fullcalendar/vue": "^4.4.0",
     "@nuxtjs/dotenv": "^1.4.1",
+    "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "core-js": "2",
     "firebase": "^7.13.1",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@mdi/font": "^5.0.45",
     "@mdi/js": "^5.0.45",
+    "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/vuetify": "^1.0.0",
     "vue-cli-plugin-vuetify": "~2.0.5"
   }
