@@ -2,7 +2,10 @@
   <div>
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
-        <v-flex xs12 sm8 md4>
+        <p>
+        左のメニューをボタンから階を移動できます。１０１会津太郎さんの詳細が確認できます。（他メンテナンス中）
+        </p>
+        <!-- <v-flex xs12 sm8 md4>
           <v-card>
             <v-toolbar>
               <v-toolbar-title>Login</v-toolbar-title>
@@ -43,7 +46,7 @@
               v-on:click="gotoResetPassword"
             >パスワードを忘れたかたはこちら</v-btn>
           </v-card>
-        </v-flex>
+        </v-flex> -->
       </v-layout>
     </v-container>
   </div>

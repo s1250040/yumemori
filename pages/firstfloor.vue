@@ -111,7 +111,7 @@ export default {
       users: [
         {
           id: '1',
-          name: '101千葉照子',
+          name: '101会津太郎',
           leaving: "離床時間"+'60'+"分",
           bpm: "心拍数"+'100'+"bpm",
           bodytempreture: "体温"+'36.2'+"度",
@@ -121,7 +121,7 @@ export default {
         },
         {
           id: '2',
-          name: '102山内智恵子',
+          name: '102会津花子',
           leaving: "離床時間"+'0'+"分",
           bpm: "心拍数"+'105'+"bpm",
           bodytempreture: "体温"+'36.6'+"度",
@@ -131,7 +131,7 @@ export default {
         },
         {
           id: '3',
-          name: '103宮内考子',
+          name: '103会津一郎',
           leaving: "離床時間"+'3'+"分",
           bpm: "心拍数"+'99'+"bpm",
           bodytempreture: "体温"+'36.8'+"度",

@@ -60,6 +60,8 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/axios'
   ],
+  axios: {
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
