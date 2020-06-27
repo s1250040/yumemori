@@ -41,6 +41,8 @@ import heartratechart from './heartrate-chart';
 import bodychart from './bodytempleturechart';
 
 export default {
+    data() {
+    },
     components: {
         sleepstagechart,
         doughnutchart,

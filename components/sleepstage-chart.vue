@@ -16,8 +16,8 @@
     ></v-sparkline>
     <v-row>
     <v-col cols="4" md="4">|<div></div>21:31~05:37</v-col>
-    <v-col cols="4" md="4">|</v-col>
-    <v-col cols="4" md="4">|</v-col>
+    <v-col cols="4" md="4">|<div></div>0:00</v-col>
+    <v-col cols="4" md="4">|<div></div>2:30</v-col>
     </v-row>
     <v-divider></v-divider>
 
@@ -33,7 +33,7 @@
   </template>
 
   <script>
-  const gradients = [
+    const gradients = [
     ['#f72047', '#ffd200', '#1feaea'],
     ['#9C27B0','#FFEB3B','#D50000'],
     ['#1feaea', '#ffd200', ,'#f72047'],
