@@ -13,11 +13,18 @@
         <v-row dense>
           <v-col cols="8">
             <v-card>
+              <div>
               ・最高血圧
               {{maxlist}}
+              </div>
+              <div>
               ・最低血圧
               {{minlist}}
+              </div>
+              <div>
               ・体温
+              {{ templist }}
+              </div>
             </v-card>
           </v-col>
           <v-col cols="1"></v-col>
@@ -25,18 +32,16 @@
             <v-card>
               <v-container>
                 <v-row dense>
-                  <div id="pressure">
                     <v-form ref="form">
                       <v-text-field placeholder="最高血圧" v-model="maxPressure"></v-text-field>
                       <v-text-field placeholder="最低血圧" v-model="minPressure"></v-text-field>
-                      <v-btn color="primary" @submit.prevent="addPress">確定</v-btn>
+                      <v-btn color="primary" @click="addPress">確定</v-btn>
                     </v-form>
-                  </div>
                 </v-row>
                 <v-row dense>
                   <v-form ref="form">
                     <v-text-field placeholder="体温" v-model="temp"></v-text-field>
-                    <v-btn color="primary" @click="submit">確定</v-btn>
+                    <v-btn color="primary" @click.prevent="addTemp">確定</v-btn>
                   </v-form>
                 </v-row>
               </v-container>
@@ -121,7 +126,8 @@ export default {
       this.minPressure = "";
     },
     addTemp: function() {
-      templist.push(temp);
+      this.templist.push(temp);
+      this.temp = "";
     },
     addPress: function() {
       this.addMinPress();
