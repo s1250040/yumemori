@@ -46,7 +46,12 @@ export default {
       src: '~/plugins/vue-full-calendar',
       ssr: false
     },
+    {
+      src: '~plugins/vue-js-toggle-button',
+      ssr: false
+    },
   ],
+  
   /*
   ** Nuxt.js dev-modules
   */
@@ -58,6 +63,7 @@ export default {
   */
   modules: [
     '@nuxtjs/dotenv'
+    
   ],
   /*
   ** vuetify module configuration
@@ -80,6 +86,7 @@ export default {
       }
     }
   },
+  
   /*
   ** Build configuration
   */

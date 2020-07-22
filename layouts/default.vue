@@ -90,8 +90,6 @@
 <script>
 export default {
   data () {
-    display: false;
-
     return {
       showContent: false,
       clipped: false,
