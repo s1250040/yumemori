@@ -40,7 +40,7 @@ export default {
         {
           start: '2020-05-05',
           end : '2020-05-05',
-          rendering: 'background',
+          rendering: 'background', 
         },
         {
           start: '2020-06-17',
@@ -48,7 +48,8 @@ export default {
           rendering: 'background',
         },
         
-      ]
+      ],
+      backgroundColor: 'black',
     };
   },
   methods: {
@@ -89,6 +90,7 @@ export default {
   background-color: #e6e6fa;
 }
 */
+
 .fc-bgevent {
   background-color: #ffffff;
   opacity: 1;

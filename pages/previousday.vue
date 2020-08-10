@@ -14,15 +14,16 @@
           <v-col cols="8">
             <v-card>
               <div>
-              ・最高血圧
-              {{maxlist}}
+              <p>・最高血圧</p>
+              {{viewmax}}
               </div>
               <div>
-              ・最低血圧
-              {{minlist}}
+                <br>
+                <p>・最低血圧</p>
+              {{viewmin}}
               </div>
               <div>
-              ・体温
+              <p>・体温</p>
               {{ templist }}
               </div>
             </v-card>
@@ -107,7 +108,9 @@ export default {
       temp: "",
       maxlist: [],
       minlist: [],
-      templist: []
+      templist: [36.7, 36.0],
+      viewmax: "",
+      viewmin: "",
     };
   },
   methods: {
@@ -118,11 +121,13 @@ export default {
       this.showContent = false;
     },
     addMaxPress: function() {
-      maxlist.push(this.maxPressure);
+      //maxlist.push(this.maxPressure);
+      this.viewmax = this.maxPressure ;
       this.maxPressure = "";
     },
     addMinPress: function() {
-      this.minlist.push(this.minPressure);
+     // this.minlist.push(this.minPressure);
+     this.viewmin = this.minPressure;
       this.minPressure = "";
     },
     addTemp: function() {
@@ -193,4 +198,6 @@ export default {
 #form {
   background-color: cornflowerblue;
 }
+
+
 </style>
