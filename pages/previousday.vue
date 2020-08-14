@@ -13,19 +13,23 @@
         <v-row dense>
           <v-col cols="8">
             <v-card>
+              <!--
               <div>
               <p>・最高血圧</p>
-              {{viewmax}}
+              {{ maxlist }}
               </div>
               <div>
                 <br>
                 <p>・最低血圧</p>
-              {{viewmin}}
+              {{ minlist }}
               </div>
               <div>
               <p>・体温</p>
               {{ templist }}
               </div>
+              -->
+              <p>入力した血圧、体温の表示をここでする予定です</p>
+              <p>(作成中)</p>
             </v-card>
           </v-col>
           <v-col cols="1"></v-col>
@@ -108,7 +112,7 @@ export default {
       temp: "",
       maxlist: [],
       minlist: [],
-      templist: [36.7, 36.0],
+      templist: [],
       viewmax: "",
       viewmin: "",
     };
