@@ -6,7 +6,7 @@
     </v-btn>
     <toggle-button
       @change="changeDisplay = !changeDisplay"
-      :labels="{checked: 'on', unchecked: 'off'}"
+      :labels="{checked: ' ', unchecked: ' '}"
     />
     <div v-if="changeDisplay">
       <v-container>
