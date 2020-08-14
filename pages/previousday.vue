@@ -13,23 +13,21 @@
         <v-row dense>
           <v-col cols="8">
             <v-card>
-              <!--
+              
               <div>
-              <p>・最高血圧</p>
-              {{ maxlist }}
+              <p>・最高血圧(mmHg)</p>
+              {{ maxPressure }}
               </div>
               <div>
                 <br>
-                <p>・最低血圧</p>
-              {{ minlist }}
+                <p>・最低血圧(mmHg)</p>
+              {{ minPressure }}
               </div>
               <div>
-              <p>・体温</p>
-              {{ templist }}
+              <br>
+              <p>・体温(℃)</p>
+              {{ temp }}
               </div>
-              -->
-              <p>入力した血圧、体温の表示をここでする予定です</p>
-              <p>(作成中)</p>
             </v-card>
           </v-col>
           <v-col cols="1"></v-col>
@@ -38,7 +36,8 @@
               <v-container>
                 <v-row dense>
                     <v-form ref="form">
-                      <v-text-field placeholder="最高血圧" v-model="maxPressure"></v-text-field>
+                      入力フォーム
+                      <v-text-field placeholder="最高血圧" v-model="maxPressure" ></v-text-field>
                       <v-text-field placeholder="最低血圧" v-model="minPressure"></v-text-field>
                       <v-btn color="primary" @click="addPress">確定</v-btn>
                     </v-form>
