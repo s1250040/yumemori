@@ -1,14 +1,16 @@
-<template>
+<template > 
   <FullCalendar
     default-view="dayGridMonth"
     :locale="locale"
     :header="calendarHeader"
     :weekends="calendarWeekends"
     :plugins="calendarPlugins"
-    :events="calendarEvents"
+    :events="events"
     @eventClick="eventClick"
     @dateClick="handleDateClick"
+    
   />
+ <!-- :events="calendarEvents" -->
 </template>
 
 <script>
@@ -19,6 +21,13 @@ import interactionPlugin from "@fullcalendar/interaction";
 import jaLocale from "@fullcalendar/core/locales/ja"; // 日本語化用
 
 export default {
+  eventSources:{
+    url:'http://localhost:8080/users',
+    method: 'POST',
+    dataType: 'json',
+  },
+  // props: ['hoge'],
+
   components: {
     FullCalendar // make the <FullCalendar> tag available
   },
@@ -36,18 +45,12 @@ export default {
       // カレンダーで使用するプラグイン
       calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
 
-      calendarEvents:  [
+      events:  [
         {
-          start: '2020-05-05',
-          end : '2020-05-05',
-          rendering: 'background', 
+          start: "2018-11-14",
+          // end : "",
+          // rendering: 'background', 
         },
-        {
-          start: '2020-06-17',
-          end : '2020-06-17',
-          rendering: 'background',
-        },
-        
       ],
       backgroundColor: 'black',
     };
@@ -56,7 +59,13 @@ export default {
     eventClick: function(info) {
      window.location.href = "./previousday";
   }
-  }
+  },
+  // async asyncData({ app }) {
+  //   // const baseUrl = 'https://jsonplaceholder.typicode.com/todos/';
+  //   const baseUrl = 'http://localhost:8080/users';
+  //   const response = await app.$axios.$get(baseUrl);
+  //   return { lists: response };
+  // }
 };
 </script>
 <style>

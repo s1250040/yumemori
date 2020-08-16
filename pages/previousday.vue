@@ -84,12 +84,13 @@
       </v-row>
     </div>
 
-    <div id="overlay" v-if="showContent">
+    <div id="overlay" v-if="showContent" >
       <div id="content">
         <p>
           <button id="closeButton" v-on:click="closeModal">close</button>
         </p>
-        <full-calendar @dateClick="handleDateClick" :plugins="calendarPlugins" />
+        <full-calendar @dateClick="handleDateClick" :plugins="calendarPlugins"/>
+        <!-- <full-calendar @dateClick="handleDateClick" :plugins="calendarPlugins" :hoge="calendarEvents"/> -->
       </div>
     </div>
   </v-container>
@@ -114,6 +115,13 @@ export default {
       templist: [],
       viewmax: "",
       viewmin: "",
+      // calendarEvents: [
+      //   {
+      //     start: "2018-11-14",
+      //     // end : "2018-11-14",
+      //     rendering: 'background', 
+      //   },
+      // ],
     };
   },
   methods: {
@@ -147,7 +155,13 @@ export default {
     doughnutchart,
     heartratechart,
     bodychart
-  }
+  },
+  // async asyncData({ app }) {
+  //   // const baseUrl = 'https://jsonplaceholder.typicode.com/todos/';
+  //   const baseUrl = 'http://localhost:8080/users';
+  //   const response = await app.$axios.$get(baseUrl);
+  //   return { lists: response };
+  // }
 };
 </script>
 
