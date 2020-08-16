@@ -8,12 +8,13 @@
     :events="events"
     @eventClick="eventClick"
     @dateClick="handleDateClick"
-    
   />
  <!-- :events="calendarEvents" -->
 </template>
 
 <script>
+import axios from 'axios';
+import api from "../plugins/api.js";
 import FullCalendar from "@fullcalendar/vue";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -21,19 +22,33 @@ import interactionPlugin from "@fullcalendar/interaction";
 import jaLocale from "@fullcalendar/core/locales/ja"; // 日本語化用
 
 export default {
-  eventSources:{
-    url:'http://localhost:8080/users',
-    method: 'POST',
-    dataType: 'json',
-  },
+
   // props: ['hoge'],
 
   components: {
+    // api,
     FullCalendar // make the <FullCalendar> tag available
   },
   computed: {},
   data() {
     return {
+
+    // eventSources:{
+    //   url:'https://jsondata.okiba.me/v1/json/oxmhS200816055834',
+    //   extraParams: function(){
+    //     return{
+    //       dynamic_value : Math.random()
+    //     }
+    //   }
+    //     // events(start,callback){
+    //     //   axios.get('https://jsondata.okiba.me/v1/json/oxmhS200816055834').then(response => {
+    //     //     callback(response.data.data)
+    //     //   })
+    //     // }
+
+    //   },
+  
+    
       locale: jaLocale, // 日本語化
       // カレンダーヘッダーのデザイン
       calendarHeader: {
@@ -44,15 +59,20 @@ export default {
       calendarWeekends: true, // 土日を表示するか
       // カレンダーで使用するプラグイン
       calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+      
+      // events: {start: "2020-04-04"},
 
       events:  [
         {
-          start: "2018-11-14",
-          // end : "",
+          start: "2020-04-04",
+          // // end : "",
           // rendering: 'background', 
+          // backgroundColor: 'white',
         },
       ],
-      backgroundColor: 'black',
+      // backgroundColor: 'white',
+      // eventColor: "white",
+      // items: ""
     };
   },
   methods: {
@@ -60,11 +80,40 @@ export default {
      window.location.href = "./previousday";
   }
   },
+  mounted(){
+    this.$nextTick(function (){
+      //  console.log(this.$api.getHoge())
+    // this.asyncData()
+    // axios.get('https://jsondata.okiba.me/v1/json/j0CQ5200816084851').then(response => {
+      axios.get('http://localhost:8080/users').then(response => {
+      console.log(response.data)
+      // console.log(this.items)
+      // this.items=response.data 
+      var temp = JSON.parse(JSON.stringify(response.data))
+      console.log(temp)
+      // this.events.push(temp)
+      this.events = temp
+      })
+      
+    })
+  },
+  //  async asyncData() {
+  //   await axios.get('https://jsondata.okiba.me/v1/json/oxmhS200816055834')
+  //   .then(res =>{
+  //     console.log(res)
+  //     this.items= res.data.contents
+  //   })
+  // }
   // async asyncData({ app }) {
   //   // const baseUrl = 'https://jsonplaceholder.typicode.com/todos/';
   //   const baseUrl = 'http://localhost:8080/users';
   //   const response = await app.$axios.$get(baseUrl);
   //   return { lists: response };
+  // }
+  // asyncData(){
+  //   return axios.get('http://localhost:8080/users').then(res => {
+  //     return {lists:data}
+  //   })
   // }
 };
 </script>

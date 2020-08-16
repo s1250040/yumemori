@@ -33,6 +33,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/axios',
+    '~/plugins/api',
     '@/plugins/firebase.js',
     {
       src: '@/plugins/vue-chartjs',
@@ -65,6 +67,8 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/axios'
   ],
+  axios: {
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
