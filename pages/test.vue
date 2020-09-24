@@ -1,15 +1,19 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <full-calendar 
-      @dateClick="handleDateClick" :plugins="calendarPlugins" 
-      />
-    </div>
-  </section>
+<v-container>
+  <v-row>
+    <v-col cols = "3">
+    <Form/>
+  </v-col>
+  </v-row>
+</v-container>
 </template>
 
 <script>
+import Form from '../components/Form'
 export default {
+  components: {
+    Form
+  }
   
 }
 </script>

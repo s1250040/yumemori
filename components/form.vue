@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="5">
+   <v-col cols="4">
       <v-card class="form">
         <v-form ref="form">
           <v-container>
@@ -21,7 +21,9 @@
               label="収縮期血圧" 
               outlined="true" 
               class="pressure" 
-              clearable></v-text-field>
+              clearable
+              counter="3"
+              ></v-text-field>
               <v-text-field 
               placeholder 
               v-model="newMinPressure" 
@@ -29,6 +31,7 @@
               outlined="true" 
               class="pressure" 
               clearable
+              counter="3"
               ></v-text-field>
             </v-row>
             <v-row>
@@ -38,6 +41,7 @@
               label="心拍数" 
               outlined="true" 
               clearable
+              counter="3"
               ></v-text-field>
             </v-row>
             <v-row>
@@ -47,6 +51,7 @@
               label="体温" 
               outlined="true" 
               clearable
+              counter="4"
               ></v-text-field>
             </v-row>
             <v-row>
@@ -63,7 +68,6 @@
         </v-form>
       </v-card>
     </v-col>
-    <v-col v-for="data in datas" :key="data.id" :cols="8"></v-col>
   </v-row>
 </template>
 
@@ -74,20 +78,28 @@ import "vue2-timepicker/dist/VueTimepicker.css";
 export default {
   data() {
     return {
-      newMaxPressure: "",
+     newMaxPressure: "",
       newMinPressure: "",
       newTemp: "",
       newHeart: "",
       newNote: "",
       newTime: "",
-      datas: [
+      data: [
         {
           maxPressure: "130",
           minPressure: "65",
           temp: "36.5",
           heart: "100",
           note: "あああああ",
-          time: ""
+          time: "01:11"
+        },
+        {
+          maxPressure: "135",
+          minPressure: "70",
+          temp: "36.8",
+          heart: "111",
+          note: "あaあああ",
+          time: "02:00"
         }
       ]
     };
@@ -95,7 +107,7 @@ export default {
   methods: {
     add: function() {
       if (confirm("確定してもよろしいですか？")) {
-        this.datas.push({
+        this.data.push({
           maxPressure: this.newMaxPressure,
           minPressure: this.newMinPressure,
           temp: this.newTemp,
@@ -129,6 +141,7 @@ export default {
 #time {
   margin: 20px;
 }
+
 
 </style>
 

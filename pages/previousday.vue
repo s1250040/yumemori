@@ -9,50 +9,7 @@
       :labels="{checked: ' ', unchecked: ' '}"
     />
     <div v-if="changeDisplay">
-      <v-container>
-        <v-row dense>
-          <v-col cols="8">
-            <v-card>
-              
-              <div>
-              <p>・最高血圧(mmHg)</p>
-              {{ maxPressure }}
-              </div>
-              <div>
-                <br>
-                <p>・最低血圧(mmHg)</p>
-              {{ minPressure }}
-              </div>
-              <div>
-              <br>
-              <p>・体温(℃)</p>
-              {{ temp }}
-              </div>
-            </v-card>
-          </v-col>
-          <v-col cols="1"></v-col>
-          <v-col cols="3">
-            <v-card>
-              <v-container>
-                <v-row dense>
-                    <v-form ref="form">
-                      入力フォーム
-                      <v-text-field placeholder="最高血圧" v-model="maxPressure" ></v-text-field>
-                      <v-text-field placeholder="最低血圧" v-model="minPressure"></v-text-field>
-                      <v-btn color="primary" @click="addPress">確定</v-btn>
-                    </v-form>
-                </v-row>
-                <v-row dense>
-                  <v-form ref="form">
-                    <v-text-field placeholder="体温" v-model="temp"></v-text-field>
-                    <v-btn color="primary" @click.prevent="addTemp">確定</v-btn>
-                  </v-form>
-                </v-row>
-              </v-container>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+      
     </div>
 
     <div v-else>

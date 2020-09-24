@@ -138,7 +138,7 @@ export default {
           chart: '/miyauchi',
           state: '#64FFDA',
           icon: 'mdi-airplane-takeoff'
-        }
+        },
       ]
     }
   },
