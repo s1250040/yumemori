@@ -1,6 +1,6 @@
 <template>
   <v-row>
-   <v-col cols="4">
+   <v-col>
       <v-card class="form">
         <v-form ref="form">
           <v-container>
