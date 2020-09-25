@@ -54,6 +54,16 @@
               counter="4"
               ></v-text-field>
             </v-row>
+             <v-row>
+              <v-text-field 
+              placeholder 
+              v-model="newSpO2" 
+              label="SpO2" 
+              outlined="true" 
+              clearable
+              counter="2"
+              ></v-text-field>
+            </v-row>
             <v-row>
               <v-text-field
                 placeholder="特記事項があれば入力してください"
@@ -82,6 +92,7 @@ export default {
       newMinPressure: "",
       newTemp: "",
       newHeart: "",
+      newSpO2: "",
       newNote: "",
       newTime: "",
       data: [
@@ -90,6 +101,7 @@ export default {
           minPressure: "65",
           temp: "36.5",
           heart: "100",
+          SpO2: "98",
           note: "あああああ",
           time: "01:11"
         },
@@ -98,6 +110,7 @@ export default {
           minPressure: "70",
           temp: "36.8",
           heart: "111",
+          SpO2: "99",
           note: "あaあああ",
           time: "02:00"
         }
@@ -112,6 +125,7 @@ export default {
           minPressure: this.newMinPressure,
           temp: this.newTemp,
           heart: this.newHeart,
+          SpO2: this.newSpO2,
           note: this.newNote,
           time: this.newTime
         });
@@ -119,6 +133,7 @@ export default {
         this.newMinPressure = "";
         this.newHeart = "";
         this.newTemp = "";
+        this.newSpO2 = "";
         this.newNote = "";
       }
     }
