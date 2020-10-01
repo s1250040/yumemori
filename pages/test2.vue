@@ -1,6 +1,12 @@
 <template>
+
+
   <v-row>
-    <v-col cols="5">
+    <!--
+    <Form/>
+    -->
+      
+    <v-col cols="4">
       <v-card class="form">
         <v-form ref="form">
           <v-container>
@@ -21,7 +27,9 @@
               label="収縮期血圧" 
               outlined="true" 
               class="pressure" 
-              clearable></v-text-field>
+              clearable
+              counter="3"
+              ></v-text-field>
               <v-text-field 
               placeholder 
               v-model="newMinPressure" 
@@ -29,6 +37,7 @@
               outlined="true" 
               class="pressure" 
               clearable
+              counter="3"
               ></v-text-field>
             </v-row>
             <v-row>
@@ -38,6 +47,7 @@
               label="心拍数" 
               outlined="true" 
               clearable
+              counter="3"
               ></v-text-field>
             </v-row>
             <v-row>
@@ -47,6 +57,7 @@
               label="体温" 
               outlined="true" 
               clearable
+              counter="4"
               ></v-text-field>
             </v-row>
             <v-row>
@@ -63,13 +74,85 @@
         </v-form>
       </v-card>
     </v-col>
-    <v-col v-for="data in datas" :key="data.id" :cols="8"></v-col>
+
+    <ol>
+      <li v-for="item in data" :key="item.time">
+        {{item.time}}
+      </li>
+    </ol>
+
+
+   <v-col>
+    <v-card v-for="item in data" :key="item.time">
+      <v-row>
+        <v-col>
+          <div class="title">
+            name
+          </div>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-card class="infocard">
+        <v-col>
+          <div class="title">
+          収縮期血圧
+          </div>
+          <div class="data">
+          <br>{{item.maxPressure}}
+          </div>
+          </v-col>
+        </v-card>
+        <v-card class="infocard">
+        <v-col>
+          <div class="title">
+          拡張期血圧
+          </div>
+          <div class="data">
+            <br>{{item.minPressure}}
+          </div>
+          </v-col>
+        </v-card>
+         <v-card class="infocard">
+        <v-col>
+          <div class="title">
+          心拍数
+          </div>
+          <div class="data">
+            <br>{{item.heart}}
+          </div>
+          </v-col>
+        </v-card>
+         <v-card class="infocard">
+        <v-col>
+          <div class="title">
+          体温
+          </div>
+          <div class="data">
+            <br>{{item.temp}}
+          </div>
+          </v-col>
+        </v-card>
+      </v-row>
+      <v-row>
+        <v-card id="notes">
+          <div id="note_title">
+            特記事項
+          </div>
+          <div id="note_text">
+            {{item.note}}
+          </div>
+        </v-card>
+      </v-row>
+    </v-card>
+     </v-col>
   </v-row>
+  
 </template>
 
 <script>
 import VueTimepicker from "vue2-timepicker";
 import "vue2-timepicker/dist/VueTimepicker.css";
+import Form from '../components/Form.vue';
 
 export default {
   data() {
@@ -80,14 +163,22 @@ export default {
       newHeart: "",
       newNote: "",
       newTime: "",
-      datas: [
+      data: [
         {
           maxPressure: "130",
           minPressure: "65",
           temp: "36.5",
           heart: "100",
           note: "あああああ",
-          time: ""
+          time: "01:11"
+        },
+        {
+          maxPressure: "135",
+          minPressure: "70",
+          temp: "36.8",
+          heart: "111",
+          note: "あaあああ",
+          time: "02:00"
         }
       ]
     };
@@ -95,7 +186,7 @@ export default {
   methods: {
     add: function() {
       if (confirm("確定してもよろしいですか？")) {
-        this.datas.push({
+        this.data.push({
           maxPressure: this.newMaxPressure,
           minPressure: this.newMinPressure,
           temp: this.newTemp,
@@ -113,7 +204,8 @@ export default {
   },
 
   components: {
-    "vue-timepicker": VueTimepicker
+    "vue-timepicker": VueTimepicker,
+    Form
   }
 };
 </script>
@@ -129,6 +221,39 @@ export default {
 #time {
   margin: 20px;
 }
+.data {
+  text-align: center;
+  font-size: 25px;
+}
+
+.title {
+  text-align: center;
+}
+
+.infocard {
+  height: 130px;
+  width: 160px;
+  padding: 10px;
+  margin: 15px;
+}
+
+#notes {
+  height: 200px;
+  width: 730px;
+  margin: 15px;
+}
+
+#note_title {
+  margin: 10px;
+  font-size: 20px;
+
+}
+
+#note_text {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
 
 </style>
 
